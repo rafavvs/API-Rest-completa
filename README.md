@@ -31,6 +31,7 @@ Exemplo sem paginação: `GET /api/jogos?genero=FPS&ordem=título`
 Exemplo com paginação: `GET /api/jogos?genero=FPS&page=1&limit=5`
 
 Resposta esperada sem paginação:
+
 ```json
 {
   "sucesso": true,
@@ -47,12 +48,14 @@ Resposta esperada sem paginação:
     }
   ]
 }
+```
 
 ## POST /api/jogos
 Cria um novo jogo.
 
 Corpo da requisição (JSON):
 
+```json
 {
   "titulo": "The Witcher 3: Wild Hunt",
   "genero": "RPG",
@@ -61,9 +64,11 @@ Corpo da requisição (JSON):
   "preco": 79.99,
   "desenvolvedora": "CD Projekt Red"
 }
+```
 
 Resposta de sucesso (201):
 
+```json
 {
   "sucesso": true,
   "mensagem": "Jogo criado com sucesso",
@@ -77,9 +82,11 @@ Resposta de sucesso (201):
     "desenvolvedora": "CD Projekt Red"
   }
 }
+```
 
 Resposta de erro (400):
 
+```json
 {
   "sucesso": false,
   "erros": [
@@ -94,13 +101,14 @@ ou
   "sucesso": false,
   "mensagem": "Já existe um jogo cadastrado com esse título."
 }
+```
 
 Validações implementadas:
 - `titulo`: obrigatório, string não vazia, único na coleção.
 - `genero`: obrigatório, string não vazia.
 - `plataforma`: obrigatória, string não vazia.
 - `ano`: obrigatório, inteiro entre 1950 e o ano atual.
-- ´preco´: obrigatório, número não-negativo.
+- `preco`: obrigatório, número não-negativo.
 - `desenvolvedora`: obrigatória, string não vazia.
 
 ## PUT /api/jogos/:id
@@ -116,7 +124,7 @@ Exemplo: GET /api/jogos/1
 
 Resposta esperada:
 
-JSON
+```json
 {
   "sucesso": true,
   "dados": {
@@ -129,6 +137,8 @@ JSON
     "desenvolvedora": "Riot Games"
   }
 }
+``` 
+
 ## GET /
 Retorna uma mensagem de status simples.
 
@@ -136,12 +146,13 @@ Exemplo: GET /
 
 Resposta esperada:
 
-JSON
+```json
 {
   "mensagem": "API REST completa de jogos funcionando!",
   "status": "sucesso",
   "timestamp": "2026-04-14T00:00:00.000Z"
 }
+```
 
 ## GET /info
 Retorna informações sobre a API.
@@ -150,12 +161,13 @@ Exemplo: GET /info
 
 Resposta esperada:
 
-JSON
+```json
 {
   "nome": "API REST completa de jogos",
   "versao": "1.0.0",
   "autor": "Rafael Vasconcelos"
 }
+```
 
 ## Como executar
 1. Instale as dependências: npm install
