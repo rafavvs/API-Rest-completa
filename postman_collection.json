@@ -1,0 +1,278 @@
+{
+  "info": {
+    "name": "API de Jogos",
+    "description": "Collection para testar a API de Jogos completa",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Listar todos os jogos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/jogos",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "jogos"]
+        }
+      }
+    },
+    {
+      "name": "Listar jogos com filtro por gênero",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/jogos?genero=FPS",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "jogos"],
+          "query": [
+            {
+              "key": "genero",
+              "value": "FPS"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Listar jogos com filtro por plataforma",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/jogos?plataforma=Mobile",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "jogos"],
+          "query": [
+            {
+              "key": "plataforma",
+              "value": "Mobile"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Listar jogos ordenados por título",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/jogos?ordem=título",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "jogos"],
+          "query": [
+            {
+              "key": "ordem",
+              "value": "título"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Listar jogos com paginação",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/jogos?page=1&limit=5",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "jogos"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Criar Jogo 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Clash Royale\",\n  \"genero\": \"Estratégia\",\n  \"plataforma\": \"Mobile\",\n  \"ano\": 2016,\n  \"preco\": 0.90,\n  \"desenvolvedora\": \"Supercell\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/jogos",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "jogos"]
+        }
+      }
+    },
+    {
+      "name": "Criar Jogo 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Overcooked\",\n  \"genero\": \"Cooperativo\",\n  \"plataforma\": \"PC/PS4/PS5/Xbox One/Xbox Series X|S/Nintendo Switch\",\n  \"ano\": 2019,\n  \"preco\": 29.99,\n  \"desenvolvedora\": \"Team17\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/jogos",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "jogos"]
+        }
+      }
+    },
+    {
+      "name": "Criar Jogo 3",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Super Mario Bros.\",\n  \"genero\": \"Plataforma\",\n  \"plataforma\": \"Nintendo Entertainment System\",\n  \"ano\": 1983,\n  \"preco\": --,\n  \"desenvolvedora\": \"Nintendo\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/jogos",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "jogos"]
+        }
+      }
+    },
+    {
+      "name": "Criar Jogo 4",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Hollow Knight\",\n  \"genero\": \"Metroidvania\",\n  \"plataforma\": \"PC/PS4/Xbox/Switch\",\n  \"ano\": 2017,\n  \"preco\": 27.99,\n  \"desenvolvedora\": \"Team Cherry\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/jogos",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "jogos"]
+        }
+      }
+    },
+    {
+      "name": "Criar Jogo 5",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Resident Evil Requiem\",\n  \"genero\": \"Sobrevivência/Horror\",\n  \"plataforma\": \"PC/PS5/Xbox Series X|S/Nintendo Switch 2\",\n  \"ano\": 2023,\n  \"preco\": 299.00,\n  \"desenvolvedora\": \"CD Projekt Red\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/jogos",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "jogos"]
+        }
+      }
+    },
+    {
+      "name": "Buscar jogo por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/jogos/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "jogos", "1"]
+        }
+      }
+    },
+    {
+      "name": "Atualizar jogo (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"preco\": 0.00\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/jogos/2",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "jogos", "2"]
+        }
+      }
+    },
+    {
+      "name": "Deletar jogo",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/jogos/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "jogos", "1"]
+        }
+      }
+    },
+    {
+      "name": "Endpoint raiz",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/",
+          "host": ["{{baseUrl}}"],
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "Informações da API",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/info",
+          "host": ["{{baseUrl}}"],
+          "path": ["info"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
